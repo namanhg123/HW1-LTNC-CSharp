@@ -1,0 +1,7 @@
+﻿Nguyễn Văn A, 2, JavaScript
+Nguyễn thị B, 2, Java
+Lò hòa Bình, 4, Python
+Trần Thị C, 2, CSharp
+Phạm Văn D, 5, Java
+Lê Thị E, 3, JavaScript
+
