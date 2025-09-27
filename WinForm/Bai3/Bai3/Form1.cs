@@ -22,13 +22,11 @@ namespace Bai3
             this.txtSo.Focus();
         }
 
-        private void button1_Click(object sender, EventArgs e) { nhapso(); }
-
+        private void button1_Click(object sender, EventArgs e) {nhapso();}
         private void txtSo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) { nhapso(); }
+            if (e.KeyCode == Keys.Enter) { nhapso();}
         }
-
         private void cboSo_SelectedIndexChanged(object sender, EventArgs e)
         {
             lstTinh.Items.Clear();
@@ -45,7 +43,6 @@ namespace Bai3
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            // Tính tổng các ước số
             int sum = 0;
             foreach (var item in lstTinh.Items)
             {
@@ -59,7 +56,7 @@ namespace Bai3
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // Đếm số lượng ước số là số chẵn
+            // dem sluong uoc chan
             int i = 0;
             foreach (var item in lstTinh.Items)
             {
@@ -73,21 +70,36 @@ namespace Bai3
 
         private void button5_Click(object sender, EventArgs e)
         {
-            // đếm số lượng ước số là số nguyên
+            // ktra la so ngto
+            bool IsPrime(int number)
+            {
+                if (number <= 1) return false;
+                for (int i = 2; i <= Math.Sqrt(number); i++)
+                {
+                    if (number % i == 0) return false;
+                }
+                return true;
+            }
+            // dem sluong uoc so ngto
             int count = 0;
             foreach (var item in lstTinh.Items)
             {
-                if (item is int || int.TryParse(item.ToString(), out _))
+                if (int.TryParse(item.ToString(), out int divisor))
                 {
-                    count++;
+                    if (IsPrime(divisor))
+                    {
+                        count++;
+                    }
                 }
             }
-            MessageBox.Show("Số lượng ước số nguyên là: " + count, "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Số lượng ước số nguyên tố là: " + count, "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }

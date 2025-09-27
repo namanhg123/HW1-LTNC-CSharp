@@ -99,7 +99,6 @@
             button1.Text = "Cập nhật";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            button1.Enter += button1_Click;
             // 
             // button2
             // 
